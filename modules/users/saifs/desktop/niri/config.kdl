@@ -25,17 +25,42 @@ layout {
 
     focus-ring {
         width 2
-        active-color 127 127 255 255
-        inactive-color 80 80 80 255
+        active-color 255 221 51 255
+        inactive-color 24 24 24 255
     }
 
     border {
         off
     }
+
+    shadow {
+        on
+        softness 12
+        color 0 0 0 85
+    }
+}
+
+// Corner rounding and clip (matches hyprland rounding = 2)
+window-rule {
+    geometry-corner-radius 2 2 2 2
+    clip-to-geometry true
+}
+
+// Zed Editor: 90% opacity (matches hyprland windowrulev2)
+window-rule {
+    match app-id=r#"^dev\.zed\.Zed$"#
+    opacity 0.90
+}
+
+// Ghostty: 80% opacity (matches hyprland windowrulev2)
+window-rule {
+    match app-id=r#"^com\.mitchellh\.ghostty$"#
+    opacity 0.80
 }
 
 spawn-at-startup "pipewire"
 spawn-at-startup "wireplumber"
+spawn-at-startup "noctalia-shell"
 
 prefer-no-csd
 
@@ -44,10 +69,10 @@ screenshot-path "~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png"
 binds {
     Mod+Return { spawn "ghostty"; }
     Mod+Q { close-window; }
-    Mod+D { spawn "rofi" "-show" "drun"; }
+    Mod+D { spawn "fuzzel"; }
 
-    Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
+    Mod+F { fullscreen-window; }
+    Mod+Shift+F { maximize-column; }
 
     // Focus
     Mod+H { focus-column-left; }
@@ -97,8 +122,20 @@ binds {
     Mod+Equal { set-column-width "+10%"; }
 
     // Screenshot
+    Mod+Shift+S { spawn "grimshot" "copy" "anything"; }
     Print { screenshot; }
     Mod+Print { screenshot-window; }
+
+    // Media keys
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "s" "5%+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "5%-"; }
+    XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
 
     // Session
     Mod+Shift+E { quit; }
