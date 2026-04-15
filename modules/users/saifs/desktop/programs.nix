@@ -1,11 +1,14 @@
-{ ... }:
+{ inputs, ... }:
 {
   flake.modules.homeManager.users-saifs-desktop-programs =
     { pkgs, ... }:
+    let
+      unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
+    in
     {
       home.packages = with pkgs; [
         ghostty
-        zed-editor
+        unstable.zed-editor
         vesktop
         fuzzel
         spotify
