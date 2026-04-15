@@ -21,6 +21,7 @@
         monocraft
         tmux
         fastfetch
+        bitwarden-cli
       ];
     };
 }

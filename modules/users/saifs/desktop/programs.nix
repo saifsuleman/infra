@@ -12,6 +12,7 @@
         sway-contrib.grimshot
         playerctl
         brightnessctl
+        bitwarden-desktop
       ];
 
       home.pointerCursor = {
