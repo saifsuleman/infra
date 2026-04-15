@@ -10,6 +10,8 @@
         fuzzel
         spotify
         sway-contrib.grimshot
+        playerctl
+        brightnessctl
       ];
 
       home.pointerCursor = {
