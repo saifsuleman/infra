@@ -19,8 +19,7 @@
         rustup
         zig
         nodejs
-        gcc
-        (lib.lowPrio clang)
+        clang
         python3
         gnumake
         claude-code
