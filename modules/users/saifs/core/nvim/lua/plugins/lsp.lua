@@ -28,7 +28,7 @@ vim.lsp.config("zls", {
   root_markers = { "build.zig", ".git" },
 })
 
-vim.lsp.enable({ "lua_ls", "nil_ls", "rust_analyzer", "kotlin_language_server", "zls })
+vim.lsp.enable({ "lua_ls", "nil_ls", "rust_analyzer", "kotlin_language_server", "zls" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
