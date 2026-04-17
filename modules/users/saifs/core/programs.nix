@@ -16,13 +16,16 @@
 
         # devenv stuff, maybe move to shells...
         go
-        rustup
         zig
         nodejs
         clang
         python3
         gnumake
         claude-code
+
+        cargo
+        rustc
+        rust-analyzer
       ];
     };
 }
