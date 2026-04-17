@@ -17,6 +17,7 @@
         brightnessctl
         bitwarden-desktop
         obsidian
+        jetbrains.idea-ultimate
       ];
 
       home.pointerCursor = {
