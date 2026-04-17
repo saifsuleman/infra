@@ -29,6 +29,7 @@
             # Desktop Only
             users-saifs-desktop-programs
             users-saifs-desktop-noctalia
+            users-saifs-desktop-nvim
             desktop-zen-browser
           ]
           ++ lib.optionals config.machine.linux [
