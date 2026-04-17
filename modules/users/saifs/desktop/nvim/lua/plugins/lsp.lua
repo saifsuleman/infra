@@ -16,7 +16,13 @@ vim.lsp.config("rust_analyzer", {
   root_markers = { "Cargo.toml", ".git" },
 })
 
-vim.lsp.enable({ "lua_ls", "nil_ls", "rust_analyzer" })
+vim.lsp.config("kotlin_language_server", {
+  cmd = { "kotlin-language-server" },
+  filetypes = { "kotlin" },
+  root_markers = { "build.gradle", "build.gradle.kts", "settings.gradle", "settings.gradle.kts", ".git" },
+})
+
+vim.lsp.enable({ "lua_ls", "nil_ls", "rust_analyzer", "kotlin_language_server" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)

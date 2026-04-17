@@ -28,6 +28,7 @@
             p.go
             p.javascript
             p.typescript
+            p.kotlin
           ]))
 
           # LSP
@@ -45,6 +46,7 @@
         # LSP servers
         lua-language-server
         nil # nix lsp
+        kotlin-language-server
         # Telescope dependencies
         ripgrep
         fd

@@ -18,7 +18,12 @@
         bitwarden-desktop
         obsidian
         jetbrains.idea-ultimate
+        jdk21
       ];
+
+      home.sessionVariables = {
+        _JAVA_AWT_WM_NONREPARENTING = "1";
+      };
 
       home.pointerCursor = {
         name = "macOS";
