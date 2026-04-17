@@ -45,7 +45,7 @@
     "capsuleColorKey": "none",
     "capsuleOpacity": 0,
     "contentPadding": 2,
-    "density": "comfortable",
+    "density": "default",
     "displayMode": "always_visible",
     "enableExclusionZoneInset": true,
     "fontScale": 1,
