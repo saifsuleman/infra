@@ -1,0 +1,6 @@
+local telescope = require("telescope.builtin")
+vim.keymap.set("n", "<leader>pf", telescope.find_files, { desc = "Find files" })
+vim.keymap.set("n", "<C-p>", telescope.git_files, { desc = "Git files" })
+vim.keymap.set("n", "<leader>ps", telescope.live_grep, { desc = "Live grep" })
+vim.keymap.set("n", "<leader>fb", telescope.buffers, { desc = "Buffers" })
+vim.keymap.set("n", "<leader>fh", telescope.help_tags, { desc = "Help tags" })
