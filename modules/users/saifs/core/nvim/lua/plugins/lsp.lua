@@ -22,7 +22,13 @@ vim.lsp.config("kotlin_language_server", {
   root_markers = { "build.gradle", "build.gradle.kts", "settings.gradle", "settings.gradle.kts", ".git" },
 })
 
-vim.lsp.enable({ "lua_ls", "nil_ls", "rust_analyzer", "kotlin_language_server" })
+vim.lsp.config("zls", {
+  cmd = { "zls" },
+  filetypes = { "zig" },
+  root_markers = { "build.zig", ".git" },
+})
+
+vim.lsp.enable({ "lua_ls", "nil_ls", "rust_analyzer", "kotlin_language_server", "zls })
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)

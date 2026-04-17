@@ -47,6 +47,7 @@
         lua-language-server
         nil # nix lsp
         kotlin-language-server
+        zls
         # Telescope dependencies
         ripgrep
         fd
