@@ -26,6 +26,8 @@
         cargo
         rustc
         rust-analyzer
+
+        firecracker
       ];
     };
 }
