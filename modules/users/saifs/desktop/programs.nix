@@ -19,6 +19,10 @@
         obsidian
         jetbrains.idea-ultimate
         jdk21
+        mullvad-vpn
+        lunar-client
+        prismlauncher
+        cutechess
       ];
 
       home.sessionVariables = {

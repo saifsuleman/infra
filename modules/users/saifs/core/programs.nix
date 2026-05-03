@@ -1,5 +1,7 @@
-{ ... }:
+{ inputs, ... }:
 {
+  flake-file.inputs = { fenix.url = "github:nix-community/fenix"; };
+
   flake.modules.homeManager.users-saifs-core-programs =
     { pkgs, ... }:
     {
@@ -22,12 +24,11 @@
         python3
         gnumake
         claude-code
-
-        cargo
-        rustc
-        rust-analyzer
-
+        rustup
         firecracker
+
+        libsecret
+        gnome-keyring
       ];
     };
 }
